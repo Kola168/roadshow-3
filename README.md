@@ -15,6 +15,9 @@ windows下推荐安装终端环境：[cmder.net](http://cmder.net/)
 进入项目目录,运行
 
 ```
+# 设置npm源,推荐桌面云内的私有npm源
+npm config set registry http://168.61.9.74:4873
+
 # 安装依赖
 npm install
 
