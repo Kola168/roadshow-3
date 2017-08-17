@@ -16,7 +16,8 @@
   },
   "keywords": [],
   "dependencies": {
-    "antd": "^2.8.3",
+    "antd": "^2.12.4",
+    "axios": "^0.16.2",
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "core-decorators": "^0.15.0",
@@ -24,6 +25,7 @@
     "dva-loading": "^0.2.0",
     "echarts": "^3.4.0",
     "element-resize-detector": "^1.1.12",
+    "ht-standalone-demo": "^1.0.1",
     "localforage": "^1.4.3",
     "lodash": "^4.17.4",
     "react": "^15.1.0",
@@ -34,8 +36,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-persist": "^4.4.0",
-    "reselect": "^2.5.4",
-    "whatwg-fetch": "^2.0.1"
+    "reselect": "^2.5.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

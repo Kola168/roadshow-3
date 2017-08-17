@@ -2,11 +2,35 @@
 * @file utils/apiCreator
 * @author maoquan(maoquan@htsc.com)
 */
+import axios from 'axios';
 
-import request from './request';
-
-import config from '../config/request';
+import { request as requestConfig } from '../config';
 import { queryToString } from './helper';
+
+const { prefix, timeout } = requestConfig;
+
+const api = axios.create({
+  // 请求前缀
+  baseURL: prefix,
+  // 超时时间
+  timeout,
+  // 发送请求时需带上cookie
+  withCredentials: true,
+  // 响应类型
+  responseType: 'json',
+});
+
+const parseResponse = (response) => {
+  // data是服务器发回的响应
+  const { data } = response;
+  // 这里可以根据和后端的约定接口，对响应进行统一判断
+  // 然后throw出错误信息
+  // const { code, msg } = data;
+  // eg: if (code !== '0') {
+  //       throw message;
+  //     }
+  return data;
+};
 
 /**
  * api生成器
@@ -14,16 +38,6 @@ import { queryToString } from './helper';
  * @return {Fucntion}
  */
 export default function createApi() {
-  const { prefix } = config;
-
-  // 如果没有前缀，自动补上
-  const padPrefix = (url) => {
-    if (url.indexOf(prefix) === -1) {
-      return prefix + url;
-    }
-    return url;
-  };
-
   return {
 
     /**
@@ -33,14 +47,7 @@ export default function createApi() {
      * @return {Promise}
      */
     get(url, query) {
-      const finalUrl = padPrefix(url);
-      const queryString = queryToString(query);
-      return request(
-        `${finalUrl}?${queryString}`,
-        {
-          method: 'GET',
-        },
-      );
+      return api.get(`${url}?${queryToString(query)}`).then(parseResponse);
     },
 
     /**
@@ -50,17 +57,7 @@ export default function createApi() {
      * @return {Promise}
      */
     post(url, query) {
-      const finalUrl = padPrefix(url);
-      return request(
-        finalUrl,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(query),
-        },
-      );
+      return api.post(url, query).then(parseResponse);
     },
 
     /**
@@ -70,13 +67,7 @@ export default function createApi() {
      * @return {Promise}
      */
     sendLog(url, query) {
-      return request(
-        url,
-        {
-          method: 'POST',
-          body: JSON.stringify(query),
-        },
-      );
+      return axios.post(url, query);
     },
   };
 }

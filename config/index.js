@@ -30,8 +30,8 @@ var config = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8848,
-    autoOpenBrowser: true,
+    port: 8849,
+    autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     // mock转发配置项

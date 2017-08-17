@@ -1,10 +1,21 @@
 import React, { PropTypes } from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'dva/router';
+import _ from 'lodash';
 
 import { menu } from '../config';
 
+// 当前展开的菜单项
+const getSelectedKeys = () => {
+  const { pathname } = location;
+  if (pathname === '/') {
+    return _.filter(menu, item => !!item.default);
+  }
+  return [pathname];
+};
+
 const topMenus = menu.map(item => item.key);
+
 function getMenus(menuArray, siderFold, parentPath = '/') {
   return menuArray.map((item) => {
     const linkTo = parentPath + item.key;
@@ -44,29 +55,19 @@ function Menus({
 }) {
   const menuItems = getMenus(menu, siderFold);
 
-  const getAncestorKeys = (key) => {
-    const map = {
-      '/navigation/navigation2': ['/navigation'],
-    };
-    return map[key] || [];
+  const onOpenChange = (openKeys) => {
+    changeOpenKeys(openKeys);
   };
 
-  const onOpenChange = (openKeys) => {
-    const latestOpenKey = openKeys.find(key => !(navOpenKeys.indexOf(key) > -1));
-    const latestCloseKey = navOpenKeys.find(key => !(openKeys.indexOf(key) > -1));
-    let nextOpenKeys = [];
-    if (latestOpenKey) {
-      nextOpenKeys = getAncestorKeys(latestOpenKey).concat(latestOpenKey);
-    }
-    if (latestCloseKey) {
-      nextOpenKeys = getAncestorKeys(latestCloseKey);
-    }
-    changeOpenKeys(nextOpenKeys);
-  };
+  // 加入当前已选择的菜单，已选择菜单的父菜单需要展开
+  const selectedKeys = getSelectedKeys(location);
+  const openKeys = navOpenKeys.concat(
+    `/${selectedKeys[0].split('/')[1]}`,
+  );
 
   const menuProps = !siderFold ? {
     onOpenChange,
-    openKeys: navOpenKeys,
+    openKeys,
   } : {};
 
   return (
@@ -75,7 +76,7 @@ function Menus({
       mode={siderFold ? 'vertical' : 'inline'}
       theme={darkTheme ? 'dark' : 'light'}
       onClick={handleClickNavMenu}
-      defaultSelectedKeys={[location.pathname !== '/' ? location.pathname : '/home']}
+      defaultSelectedKeys={selectedKeys}
     >
       {menuItems}
     </Menu>

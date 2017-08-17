@@ -4,11 +4,14 @@
  * @author maoquan(maoquan@htsc.com)
  */
 
+import _ from 'lodash';
+
 const menus = [
   {
     key: 'example',
     name: 'Home',
     icon: 'laptop',
+    default: true,
   },
   {
     key: 'charts',
@@ -38,6 +41,18 @@ const menus = [
     name: '测试菜单',
     icon: 'user',
   },
+  {
+    key: 'standalone',
+    name: '独立模块',
+    icon: 'user',
+  },
+  {
+    key: 'standaloneDemo',
+    name: '公共模块(华泰npm源)',
+    icon: 'user',
+  },
 ];
 
 export default menus;
+
+export const getDefaultMenu = () => _.find(menus, item => !!item.default);

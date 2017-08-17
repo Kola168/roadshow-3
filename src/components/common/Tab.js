@@ -6,7 +6,7 @@ import { autobind } from 'core-decorators';
 import _ from 'lodash';
 import { Tabs, Spin } from 'antd';
 
-import menuConfig from '../../config/menu';
+import menuConfig, { getDefaultMenu } from '../../config/menu';
 
 const TabPane = Tabs.TabPane;
 
@@ -49,11 +49,21 @@ export default class Tab extends Component {
   constructor(props) {
     super(props);
     const { location: { pathname } } = props;
+    // 根据当前路由找到的tab配置
     const config = this.getConfig(pathname);
-    const panes = this.getPanesWithPathname(pathname);
+    // 默认的菜单
+    const indexMenu = getDefaultMenu();
+    let panes = this.getPanesWithPathname(pathname);
+    // 默认tab必须得出现
+    if (!_.find(panes, item => item.key === indexMenu.key)) {
+      panes = [
+        { ...indexMenu, closable: false },
+        ...panes,
+      ];
+    }
     this.state = {
       panes,
-      activeKey: config.key,
+      activeKey: config.key || indexMenu.key,
     };
   }
 
@@ -100,9 +110,7 @@ export default class Tab extends Component {
     const config = this.getConfig(pathname);
     if (!_.isEmpty(config)) {
       const isExists = panes.find(item => item.key === config.key);
-      if (panes.length === 0) {
-        panes.push({ ...config, closable: false });
-      } else if (!isExists) {
+      if (!isExists) {
         panes.push(config);
       }
     }
