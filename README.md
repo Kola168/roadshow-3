@@ -10,6 +10,8 @@ windows下推荐安装终端环境：[cmder.net](http://cmder.net/)
 
 安装nodejs: https://nodejs.org/en/
 
+注意：目前内网私有NPM源对npm v5版本支持存在问题，暂时建议安装nodejs v6.x(v6.x默认npm版本 < 5)
+
 ### 启动项目
 
 进入项目目录,运行
