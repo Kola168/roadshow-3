@@ -86,7 +86,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  user: { name: '测试用户' },
+  user: { name: '金融产品' },
 };
 
 export default Header;
