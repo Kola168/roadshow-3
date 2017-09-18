@@ -1,5 +1,5 @@
 {
-  "name": "Financial-product",
+  "name": "金融产品",
   "version": "1.0.0",
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "core-decorators": "^0.15.0",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.0",
+    "echarts": "^3.4.0",
     "element-resize-detector": "^1.1.12",
     "ht-standalone-demo": "^1.0.1",
     "localforage": "^1.4.3",
