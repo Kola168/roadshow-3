@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Button} from 'antd-mobile';
+import { Button } from 'antd-mobile';
 
-class TestComp extends Component {
+class HomePage extends Component {
     render() {
         return (
             <div>
@@ -12,5 +12,8 @@ class TestComp extends Component {
     }
 }
 
+HomePage.propTypes = {
 
-export default TestComp;
+};
+
+export default HomePage;

@@ -16,6 +16,7 @@
     ├── theme              # 全局样式定义
     ├── routes             # 页面文件, 也叫做路由文件
     └── utils              # Utils
+    └── json               # 金融产品页面JSON文件
     └── app.js             # 项目入口文件
     └── router.js          # 路径配置文件
 ├── static                 # 静态资源，图片、字体文件等

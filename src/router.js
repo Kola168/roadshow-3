@@ -13,19 +13,18 @@ import {
 import _ from 'lodash';
 
 // 可独立发布的公共模块开发示例
-// import Main from './layouts/Main';
-import TestComp from './components/page/test';
+import HandbookHome from "./components/handbook/home/";
+import Chapter from './components/handbook/content/';
 
 // 默认index,从菜单配置中取
-
 const routes = ({ history }) => (// eslint-disable-line
   <Router history={history}>
     {/*<Route path="/" component={Main}>*/}
     <Route path="/">
-      <IndexRedirect to="/example" />
-      <Route path="example">
-        <IndexRoute component={TestComp} />
-        <Route path="detail/:id" component={TestComp} />
+      <IndexRedirect to="/handbook" />
+      <Route path="handbook">
+        <IndexRoute component={HandbookHome} />
+        <Route path="chapter/:id" compoent={Chapter} />
       </Route>
     </Route>
   </Router>
