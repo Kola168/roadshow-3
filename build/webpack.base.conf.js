@@ -78,7 +78,7 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         },
         exclude: [
-          require.resolve('antd').replace(/warn\.js$/, ''),
+          require.resolve('antd-mobile').replace(/warn\.js$/, ''),
         ]
       }
     ],
