@@ -8,7 +8,6 @@ const data = ChapterArray;
 
 class HomePage extends Component {
 
-    @autobind
     linkTo(e){
         console.log(e.id)
     }
