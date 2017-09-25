@@ -18,6 +18,8 @@ import Chapter from "./components/handbook/content/";
 
 import CaseAnalysis from "./components/handbook/case-analysis/";
 
+import ListView from "./components/common/ListView/";
+
 // 默认index,从菜单配置中取
 const routes = ({ history }) => (// eslint-disable-line
   <Router history={history}>
@@ -29,6 +31,7 @@ const routes = ({ history }) => (// eslint-disable-line
         <Route path="chapter/:id" component={Chapter} />
         <Route path="test/:id" component={CaseAnalysis} />
       </Route>
+      <Route path="list/:id" component={ListView} />
     </Route>
   </Router>
 );
