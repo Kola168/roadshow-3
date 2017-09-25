@@ -16,7 +16,7 @@ import _ from 'lodash';
 import HandbookHome from "./components/handbook/home/";
 import Chapter from "./components/handbook/content/";
 
-import CaseAnalysis from "./components/handbook/case-analysis/";
+
 
 // 默认index,从菜单配置中取
 const routes = ({ history }) => (// eslint-disable-line
@@ -27,7 +27,6 @@ const routes = ({ history }) => (// eslint-disable-line
       <Route path="handbook">
         <IndexRoute component={HandbookHome} />
         <Route path="chapter/:id" component={Chapter} />
-        <Route path="test/:id" component={CaseAnalysis} />
       </Route>
     </Route>
   </Router>

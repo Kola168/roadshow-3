@@ -1,0 +1,36 @@
+@import "../../../css/variable.less";  
+  
+.container {
+  :global {
+    .am-list-view-scrollview{
+        padding: 30px ;
+ 
+      .am-list-header {
+          background-color: @title-orange;
+          font-size: 34px;
+          letter-spacing: -0.7px;
+          text-align: left;
+          padding: 16px;
+          color: @background-white;
+      }
+      
+      .list-view-section-body {
+        >div {
+          font-size: 30px;
+          line-height: 2.33;
+          letter-spacing: -0.6px;
+          text-align: left;
+          padding-left: 15px;   
+          padding-right: 15px;       
+          color: @text-black;
+          &:nth-child(odd) {
+            background-color: @background-white;
+          }
+          &:nth-child(even) {
+            background-color: @table-yellow;
+          }
+        }
+      }
+    }
+  }
+}
