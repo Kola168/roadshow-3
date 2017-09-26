@@ -15,7 +15,6 @@ class Generator extends Component {
         }
     }
 
-    
     componentDidMount() {
         const chapter = this.props.params.id
         const content = service.getContentById(chapter)
@@ -47,7 +46,7 @@ class Generator extends Component {
     renderBasicContentStyle (content, lvId) {
         const con = this.renderContent(content, lvId)
         return (
-             <div className={styles[`lv${lvId}Container`]} >
+             <div className={styles[`lv${lvId}Container`]} key={con.title ? con.title.children : ''}>
                 {con.title}
                 {con.content}
                 {con.children}
@@ -64,7 +63,7 @@ class Generator extends Component {
     renderLv2 (content) {
         const con = this.renderContent(content, 2)
         return (
-            <div className={styles.lv2Container}>
+            <div className={styles.lv2Container} key={con.title ? con.title.children : ''}>
                 {con.title}
                 {con.content}
                 <Accordion>
@@ -122,23 +121,23 @@ class Generator extends Component {
 
     renderLv1Title(title) {
         return (
-            <h1 className={styles.lv1Title}>{title}</h1>
+            <h1 className={styles.lv1Title} key={title}>{title}</h1>
         )
     }
 
     renderLv2Title(title) {
         return (
-            <h2 className={styles.lv2Title}>{title}</h2>
+            <h2 className={styles.lv2Title} key={title}>{title}</h2>
         )
     }
     renderLv3Title(title) {
         return (
-            <h3 className={classnames(styles.lv3Title, styles.lv3Title_expand)}>{title}</h3>
+            <h3 className={classnames(styles.lv3Title, styles.lv3Title_expand)} key={title}>{title}</h3>
         )
     }
     renderLv4Title(title) {
         return (
-            <span className={styles.lv4Title}>{title}</span>
+            <span className={styles.lv4Title} key={title}>{title}</span>
         )
     }
 
@@ -157,7 +156,7 @@ class Generator extends Component {
     
     renderText(text) {
         return (
-            <p className={styles.text}>{text}</p>
+            <p className={styles.text} key={text}>{text}</p>
         )
     }
     renderList(source) {
@@ -174,7 +173,6 @@ class Generator extends Component {
         if (!this.state) return
 
         let { content } = this.state
-        let initLv = 1
         return (
             <div className={styles.container}>
                 {this.renderLv1(content)}
