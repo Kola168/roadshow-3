@@ -1,0 +1,90 @@
+@import '../../../css/variable.less';
+
+
+.expand-icon (@url) {
+    left: 0px;
+    background-image:url(@url);
+    transform: none;
+    top: 37px;
+    right: 30px;
+    width: 24px;
+}
+
+.container {
+    font-size: 32px;
+    line-height: 2.19;
+    text-align: left;
+    color: @content-text;
+
+    .lv2Container {
+        margin-top: 20px;
+        background-color: @background-color-base;
+
+        :global {
+            .am-accordion {
+                border-top: none;
+            }
+
+            .am-accordion-header {
+                .arrow {
+                    .expand-icon("/static/img/handbook/unexpand.png");
+                }
+            }
+
+            .am-accordion-header[aria-expanded~="true"] {
+                .arrow {
+                    .expand-icon("/static/img/handbook/expand.png");
+                  
+                }
+            }
+        }
+
+        .lv2Title {
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 2.06;
+            color: @title-orange;
+            position: relative;
+            padding-top: 10px;
+
+            &::before {
+                .left-icon("/static/img/handbook/tag.png");
+                width: 36px;
+                height: 31px;
+                position: absolute;
+                top: -15px;
+            }
+        }
+    }
+
+    .lv3Container {
+        border-top: 1px solid @border-gray;
+        margin-left: 25px;
+        margin-right: 25px;
+
+        .lv3Title {
+            font-weight: bold;
+            font-size: 32px;
+            margin: 0;
+
+            // &_expand {
+            //     &::before {
+            //         .left-icon("/static/img/handbook/expand.png")
+            //     }
+            // }
+
+            
+        }
+    }
+
+    .lv4Title {
+        margin-left: 35px;
+    }
+
+    .text {
+        margin: 0;
+        padding-left: 35px;
+        padding-right: 10px;
+        background-color: @background-color-base;
+    }
+}
