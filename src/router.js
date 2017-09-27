@@ -13,10 +13,8 @@ import {
 import _ from 'lodash';
 
 // 可独立发布的公共模块开发示例
-import HandbookHome from "./components/handbook/home/";
-import Chapter from "./components/handbook/content/";
-
-
+import HandbookHome from "./components/handbook/home";
+import Chapter from './components/handbook/content';
 
 // 默认index,从菜单配置中取
 const routes = ({ history }) => (// eslint-disable-line
