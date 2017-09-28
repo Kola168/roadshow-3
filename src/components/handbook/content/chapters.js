@@ -1,4 +1,4 @@
-import chapter3 from '../../../json/chapters/chapter3.json';
+import chapter3 from '../../../json/chapters/chapter6.json';
 
 export default{
     chapter3,
