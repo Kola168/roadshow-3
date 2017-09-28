@@ -154,6 +154,8 @@ class Generator extends Component {
                 return this.renderList(item.resource)
             } else if(item.type === 'table') {
                 return this.renderTable(item.resource)
+            } else if(item.type === 'case') {
+                return this.renderCase(item)
             }
         })
     }
@@ -170,6 +172,11 @@ class Generator extends Component {
     }
     renderTable(source) {
         console.log('table source', source)
+        return null
+    }
+
+    renderCase(case) {
+        console.log('case source', case)
         return null
     }
     
