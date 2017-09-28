@@ -47,9 +47,9 @@ class Generator extends Component {
         const con = this.renderContent(content, lvId)
         return (
              <div className={styles[`lv${lvId}Container`]} key={con.title ? con.title.children : ''}>
-                {con.title}
-                {con.content}
-                {con.children}
+                {con.title ? con.title : null}
+                {con.content ? con.content : null}
+                {con.children ? con.children : null}
             </div>
         )
     }
@@ -120,29 +120,33 @@ class Generator extends Component {
     }
 
     renderLv1Title(title) {
+        if (!title) return null
         return (
             <h1 className={styles.lv1Title} key={title}>{title}</h1>
         )
     }
 
     renderLv2Title(title) {
+        if (!title) return null
         return (
             <h2 className={styles.lv2Title} key={title}>{title}</h2>
         )
     }
     renderLv3Title(title) {
+        if (!title) return null
         return (
             <h3 className={classnames(styles.lv3Title, styles.lv3Title_expand)} key={title}>{title}</h3>
         )
     }
     renderLv4Title(title) {
+        if (!title) return null
         return (
             <span className={styles.lv4Title} key={title}>{title}</span>
         )
     }
 
     renderMainText(textList) {
-        if (!textList || textList.length <= 0) return 
+        if (!textList || textList.length <= 0) return null
         return textList.map(item => {
             if (typeof(item) == 'string') {
                 return this.renderText(item)
@@ -155,6 +159,7 @@ class Generator extends Component {
     }
     
     renderText(text) {
+        if(!text) return null
         return (
             <p className={styles.text} key={text}>{text}</p>
         )
