@@ -55,17 +55,17 @@
                 "产品引入大区经理服务对接",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_1"
                 },
                 "产品评价对接表",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_2"
                 },
                 "售后与综合服务对接表",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_3"
                 }
             ]
         }

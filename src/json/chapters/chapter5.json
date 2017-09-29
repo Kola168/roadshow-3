@@ -24,7 +24,7 @@
                                 "表：定期报告发布频率",
                                 {
                                     "type": "table",
-                                    "resource": ""
+                                    "resource": "table_5_1"
                                 }
                             ]
                         },
