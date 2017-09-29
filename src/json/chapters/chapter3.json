@@ -107,7 +107,7 @@
                 "围绕不同类型的金融产品，公司制定了详尽的风险评级和识别的标准。如有需求，可在OA上进行查询。",
                 {
                     "type": "list",
-                    "resource": "/local/list"
+                    "resource": "list"
                 }
             ]
         }

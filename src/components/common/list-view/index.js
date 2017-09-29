@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
 import styles from './style.less';
-import ListContent from '../../../consts/list.json';
 
 class listView extends React.Component {
     constructor(props) {
@@ -15,14 +14,14 @@ class listView extends React.Component {
         });
 
         this.state = {
-            dataSource: ds.cloneWithRows(this.props.listData)
+            dataSource: ds.cloneWithRows(this.props.data || '')
         }
 
     }
 
     @autobind
     getHeader() {
-        return this.props.listHeader;
+        return this.props.header;
     }
   
     renderRow(rowData) {
@@ -34,6 +33,7 @@ class listView extends React.Component {
     }
   
     render() {
+        if (!this.props.data) return null
         return(
             <div className={styles.container}>
                 <View>
@@ -50,8 +50,8 @@ class listView extends React.Component {
 }
 
 listView.propTypes = {
-    listData: PropTypes.array,
-    listHeader: PropTypes.string
+    data: PropTypes.array,
+    header: PropTypes.string
 };
 
 export default listView;

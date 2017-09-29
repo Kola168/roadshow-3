@@ -5,7 +5,7 @@
     left: 0px;
     background-image:url(@url);
     transform: none;
-    top: 33px;
+    top: 25px;
     right: 30px;
     width: 24px;
 }
@@ -26,6 +26,14 @@
             }
 
             .am-accordion-header {
+                height: auto;
+                line-height: 1;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                white-space: inherit;
+            }
+            
+            .am-accordion-header {
                 .arrow {
                     .expand-icon("/static/img/handbook/unexpand.png");
                 }
@@ -34,7 +42,7 @@
             .am-accordion-header[aria-expanded~="true"] {
                 .arrow {
                     .expand-icon("/static/img/handbook/expand.png");
-                    top: 33px;
+                    top: 27px;
                 }
             }
         }
@@ -66,14 +74,7 @@
             font-weight: bold;
             font-size: 32px;
             margin: 0;
-
-            // &_expand {
-            //     &::before {
-            //         .left-icon("/static/img/handbook/expand.png")
-            //     }
-            // }
-
-            
+            display: inline-block;
         }
     }
 
@@ -84,8 +85,13 @@
     .text {
         margin: 0;
         padding-left: 35px;
-        padding-right: 10px;
+        padding-right: 35px;
         text-align:justify;
         background-color: @background-color-base;
     }
+
+    .table-col2-73 {
+        background-color: red;
+    }
+
 }

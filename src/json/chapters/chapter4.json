@@ -11,7 +11,8 @@
             "text": [
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table",
+                    "className": "table-col2-73"
                 }
             ]
         },

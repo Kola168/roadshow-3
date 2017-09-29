@@ -6,6 +6,8 @@ import { autobind } from 'core-decorators';
 
 import service from './service';
 import styles from './style.less';
+import List from '../../common/list-view';
+import Table from '../../common/table';
 
 class Generator extends Component {
     constructor(props, context) {
@@ -151,9 +153,9 @@ class Generator extends Component {
             if (typeof(item) == 'string') {
                 return this.renderText(item)
             } else if(item.type === 'list') {
-                return this.renderList(item.resource)
+                return this.renderList(item)
             } else if(item.type === 'table') {
-                return this.renderTable(item.resource)
+                return this.renderTable(item)
             } else if(item.type === 'case') {
                 return this.renderCase(item)
             }
@@ -166,17 +168,28 @@ class Generator extends Component {
             <p className={styles.text} key={text}>{text}</p>
         )
     }
-    renderList(source) {
-        console.log('list source', source)
+    renderList(item) {
+        const listData = service.getListByName(item.resource)
+
+        if (listData) {
+            return (
+                <List data={listData.Row} header={listData.Header}/>
+            )
+        }
         return null
     }
-    renderTable(source) {
-        console.log('table source', source)
+    renderTable(item) {
+         const tableData = service.getTableByName(item.resource)
+        if (tableData) {
+            return (
+                <Table data={tableData} className={item.className || ''}/>
+            )
+        }
         return null
     }
 
-    renderCase(case) {
-        console.log('case source', case)
+    renderCase() {
+        console.log('case source')
         return null
     }
     
