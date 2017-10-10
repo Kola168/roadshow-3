@@ -6,6 +6,7 @@ import chapter4 from './chapter4.json';
 import chapter5 from './chapter5.json';
 import chapter6 from './chapter6.json';
 import chapter7 from './chapter7.json';
+import chapter8 from './chapter8.json';
 
 export default{
     chapter0,
@@ -15,5 +16,6 @@ export default{
     chapter4,
     chapter5,
     chapter6,
-    chapter7
+    chapter7,
+    chapter8
 }
