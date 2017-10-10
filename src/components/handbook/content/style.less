@@ -89,6 +89,22 @@
         padding-right: 35px;
         text-align:justify;
         background-color: @background-color-base;
+        display: inline-block;
+    }
+
+    .caseAnchor {
+        font-size: 30px;
+        line-height: 2.08;
+        text-align: left;
+        color: #fdc24f;
+        float: right;
+
+        &::after {
+            .left-icon('/static/img/handbook/more.png');
+            margin: 0 0 3px 30px; 
+            width: 27px;
+            height: 27px;
+        }
     }
 
     .image {
