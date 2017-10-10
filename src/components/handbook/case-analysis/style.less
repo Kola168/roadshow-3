@@ -1,42 +1,60 @@
 @import "../../../css/variable.less";
 
 .container {
-    background-color: @background-white;
 
     .title {
-        height: 80px;
         font-size: 32px;
         line-height: 2.19;
-        letter-spacing: -0.6px;
         text-align: left;
         font-weight: bold;
-        padding-top: 20px;
+        padding: 20px;
+        margin-top: 0px;
         color: @title-orange;
+        background-color: @background-white;
+    
     }
 
     .source {
-        height: 80px;
         font-size: 32px;
         line-height: 2.19;
-        letter-spacing: -0.6px;
         text-align: left;
+        padding: 20px;
+        margin-top: -50px;
         color: @text-black;
+        background-color: @background-white;
+    
     }
 
     .subTitle {
-        font-size: 32px;
+        // font-size: 32px;
+        // font-weight: bold;
+        // line-height: 2.19;
+        // text-align: left;
+        // color: @title-orange;
+        font-size: 34px;
         font-weight: bold;
-        line-height: 2.19;
-        letter-spacing: -0.6px;
-        text-align: left;
+        line-height: 2.06;
         color: @title-orange;
+        position: relative;
+        padding-top: 10px;
+        background-color: @background-white;
+    
+        &::before {
+            .left-icon("/static/img/handbook/tag.png");
+            width: 36px;
+            height: 31px;
+            position: absolute;
+            top: -15px;
+        }
     }
 
     .text {
         font-size: 32px;
         line-height: 2.19;
-        letter-spacing: -0.6px;
         text-align:justify;
         color: @text-black;
+        background-color: @background-white;
+        padding: 35px;
+        margin-top: -70px;
     }
 }

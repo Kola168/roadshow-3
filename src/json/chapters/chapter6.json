@@ -24,11 +24,11 @@
             "text": [
                 {
                     "type": "list",
-                    "resource": "/local/list1"
+                    "resource": "list_6_1"
                 },
                 {
                     "type": "list",
-                    "resource": "/local/list2"
+                    "resource": "list_6_2"
                 }
             ]
         },{

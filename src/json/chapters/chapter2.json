@@ -14,8 +14,9 @@
                 {
                     "type": "image",
                     "title": "图 1：各类机构基金销售保有量",
-                    "resource": "/local/image/1"
-                }
+                    "resource": "/static/img/handbook/content/image1.jpg"
+                },
+                "数据来源：中国证券投资基金业年报2015"
             ]
         },
         {

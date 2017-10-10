@@ -6,7 +6,8 @@
             "title": "(一) 金融产品部组织架构",
             "text": [{
                 "type": "image",
-                "resource": ""
+                "resource": "/static/img/handbook/content/image2.jpg",
+                "alt": "金融产品部组织架构"
             }],
             "children": [
                 {
@@ -37,7 +38,8 @@
                 "图：金融产品全流程管理示意图",
                 {
                     "type": "image",
-                    "resource": ""
+                    "resource": "/static/img/handbook/content/image3.jpg",
+                    "alt": "金融产品全流程管理示意图"
                 },
                 "金融产品全流程，包括金融产品引入、评审、销售管理和售后管理流程，金融产品部根据金融产品业务的特点，依托产品管理平台，进行金融产品全流程管理，坚持“以客户需求”为导向，在合法合规前提下，建立、维护并优化公司金融产品全流程管理制度。",
                 "各个环节的工作包括：",
@@ -55,17 +57,17 @@
                 "产品引入大区经理服务对接",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_1"
                 },
                 "产品评价对接表",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_2"
                 },
                 "售后与综合服务对接表",
                 {
                     "type": "table",
-                    "resource": ""
+                    "resource": "table_7_3"
                 }
             ]
         }
