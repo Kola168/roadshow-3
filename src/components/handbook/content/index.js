@@ -160,6 +160,8 @@ class Generator extends Component {
                 return this.renderTable(item)
             } else if(item.type === 'case') {
                 return this.renderCase(item)
+            } else if(item.type === 'tag') {
+                return this.renderTag(item)
             } else if(item.type === 'image') {
                 return this.renderImage(item)
             }
@@ -170,6 +172,16 @@ class Generator extends Component {
         if(!text) return null
         return (
             <p className={styles.text} key={text}>{text}</p>
+        )
+    }
+    renderTag(item) {
+        if(!item) return null
+        const { text } = item
+        const content = this.renderText(text)
+        return (
+            <div className={styles.tag}>
+                {content}
+            </div>
         )
     }
     renderList(item) {
@@ -213,7 +225,6 @@ class Generator extends Component {
                 <span className={styles.caseAnchor}>查看案例</span>
               </p>
         )
-       
     }
     
 

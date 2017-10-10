@@ -11,7 +11,7 @@ const data = ChapterArray;
 class HomePage extends Component {
 
     linkTo(e){
-        Navigator.goTo('/handbook/chapter/'+e.id)
+        Navigator.goTo('/handbook/chapter/'+(e.id-1))
     }
 
     render() {

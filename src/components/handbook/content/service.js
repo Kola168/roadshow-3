@@ -2,7 +2,6 @@ import refs from './refs';
 
 export default {
     getContentById (id) {
-        console.log('chapter id', id)
         return refs.chapters[`chapter${id}`]
     },
 
