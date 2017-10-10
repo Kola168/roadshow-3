@@ -158,6 +158,8 @@ class Generator extends Component {
                 return this.renderTable(item)
             } else if(item.type === 'case') {
                 return this.renderCase(item)
+            } else if(item.type === 'image') {
+                return this.renderImage(item)
             }
         })
     }
@@ -186,6 +188,14 @@ class Generator extends Component {
             )
         }
         return null
+    }
+
+    renderImage(item) {
+        return (
+            <div className={styles.image}>
+                <img src={item.resource} alt={item.alt} />
+            </div>
+        )
     }
 
     renderCase() {
