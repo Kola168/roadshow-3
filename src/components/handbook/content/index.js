@@ -181,7 +181,7 @@ class Generator extends Component {
         return null
     }
     renderTable(item) {
-         const tableData = service.getTableByName(item.resource)
+        const tableData = service.getTableByName(item.resource)
         if (tableData) {
             return (
                 <Table data={tableData} className={item.className || ''}/>

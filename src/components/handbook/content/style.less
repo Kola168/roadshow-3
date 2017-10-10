@@ -5,7 +5,7 @@
     left: 0px;
     background-image:url(@url);
     transform: none;
-    top: 25px;
+    top: 30px;
     right: 30px;
     width: 24px;
 }
@@ -42,7 +42,7 @@
             .am-accordion-header[aria-expanded~="true"] {
                 .arrow {
                     .expand-icon("/static/img/handbook/expand.png");
-                    top: 27px;
+                    top: 33px;
                 }
             }
         }
@@ -75,6 +75,7 @@
             font-size: 32px;
             margin: 0;
             display: inline-block;
+            line-height: 1.2;
         }
     }
 
@@ -90,10 +91,6 @@
         background-color: @background-color-base;
     }
 
-    .table-col2-73 {
-        background-color: red;
-    }
-
     .image {
         text-align: center;
         padding: 35px;
@@ -102,5 +99,66 @@
             width: 100%;
         }
     }
+
+    :global {
+        .table {
+            &-col2-82 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-172 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 13%;
+                        }
+
+                        &:last-child {
+                            width: 23%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-145 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 15%;
+                        }
+
+                        &:last-child {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+
+            &-col2-28 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            &-content-center {
+                tr {
+                    th,td {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    
 
 }
