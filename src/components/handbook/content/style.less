@@ -1,0 +1,186 @@
+@import '../../../css/variable.less';
+
+
+.expand-icon (@url) {
+    left: 0px;
+    background-image:url(@url);
+    transform: none;
+    top: 30px;
+    right: 30px;
+    width: 24px;
+}
+
+.container {
+    font-size: 32px;
+    line-height: 2.19;
+    text-align: left;
+    color: @content-text;
+
+    .lv2Container {
+        margin-top: 20px;
+        background-color: @background-color-base;
+
+        :global {
+            .am-accordion {
+                border-top: none;
+            }
+
+            .am-accordion-header {
+                height: auto;
+                line-height: 1;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                white-space: inherit;
+            }
+            
+            .am-accordion-header {
+                .arrow {
+                    .expand-icon("/static/img/handbook/unexpand.png");
+                }
+            }
+
+            .am-accordion-header[aria-expanded~="true"] {
+                .arrow {
+                    .expand-icon("/static/img/handbook/expand.png");
+                    top: 33px;
+                }
+            }
+        }
+
+        .lv2Title {
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 2.06;
+            color: @title-orange;
+            position: relative;
+            padding-top: 10px;
+
+            &::before {
+                .left-icon("/static/img/handbook/tag.png");
+                width: 36px;
+                height: 31px;
+                position: absolute;
+                top: -15px;
+            }
+        }
+    }
+
+    .lv3Container {
+        border-top: 1px solid @border-gray;
+        margin-left: 25px;
+        margin-right: 25px;
+
+        .lv3Title {
+            font-weight: bold;
+            font-size: 32px;
+            margin: 0;
+            display: inline-block;
+            line-height: 1.2;
+        }
+    }
+
+    .lv4Title {
+        margin-left: 35px;
+    }
+
+    .text {
+        margin: 0;
+        padding-left: 35px;
+        padding-right: 35px;
+        text-align:justify;
+        background-color: @background-color-base;
+        display: inline-block;
+    }
+
+    .caseAnchor {
+        font-size: 30px;
+        line-height: 2.08;
+        text-align: left;
+        color: #fdc24f;
+        float: right;
+
+        &::after {
+            .left-icon('/static/img/handbook/more.png');
+            margin: 0 0 3px 30px; 
+            width: 27px;
+            height: 27px;
+        }
+    }
+
+    .image {
+        text-align: center;
+        padding: 35px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .tag {
+        text-align: right;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    :global {
+        .table {
+            &-col2-82 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-172 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 13%;
+                        }
+
+                        &:last-child {
+                            width: 23%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-145 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 15%;
+                        }
+
+                        &:last-child {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+
+            &-col2-28 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            &-content-center {
+                tr {
+                    th,td {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    
+
+}

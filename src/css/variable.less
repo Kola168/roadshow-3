@@ -13,9 +13,39 @@
 @title-orange: #ed7018;
 @table-yellow: #fff9eb;
 @showAll-text: #fdc24f;
+@content-text: #333333;
+@border-gray: #e6e6e6;
+@background-white: #ffffff;
+@text-black: #333333;
+@table-header-border: #e7e7e7;
+
+/*
+  How to use mixin
+  1. @import variables.less
+  2. add classname ()
+
+  example
+  .button {
+    .text-overflow()
+  }
+*/
 
 .text-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+
+// 文字左侧图标
+.left-icon (@url) {
+  background: url(@url) no-repeat right center;
+  content: "";
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 17px;
+}
+

@@ -1,0 +1,44 @@
+@import '../../../css/variable.less';
+
+.container {
+    table {
+        border: 1px solid @title-orange;
+        margin: 30px;
+        width: 94%;
+
+        tr th {
+            border-right: 1px solid @table-header-border;
+            background-color: @title-orange;
+            color: @background-white;
+            height: 70px;
+            text-align: left;
+            padding: 10px;
+
+            &:nth-last-child(1) {
+                border-right: none;
+            }
+        }
+
+        tr {
+            &:nth-child(odd) {
+                background-color: @background-white;
+            }
+            &:nth-child(even) {
+                background-color: @table-yellow;
+            }
+
+            td {
+                border-right: 1px solid @title-orange;
+                height: 70px;
+                text-align: left;
+                padding: 10px;
+
+                &:nth-last-child(1) {
+                    border-right: none;
+                }
+
+               
+            }
+        }
+    }
+}
