@@ -1,6 +1,6 @@
 /**
  * @file routes.js
- * @author maoquan(maoquan@htsc.com)
+ * @author 
  */
 
 import React from 'react';
@@ -21,7 +21,7 @@ import Case from './components/handbook/case-analysis';
 const routes = ({ history }) => (// eslint-disable-line
   <Router history={history}>
     {/*<Route path="/" component={Main}>*/}
-    <Route path="/">
+    <Route path="financial">
       <IndexRedirect to="/handbook" />
       <Route path="handbook">
         <IndexRoute component={HandbookHome} />
