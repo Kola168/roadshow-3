@@ -38,5 +38,10 @@
         "id": "8", 
         "icon": "../../../../static/img/handbook/Chapter8.png", 
         "text": "金融产品部对接服务"
+        },
+    {
+        "id": "9", 
+        "icon": "../../../../static/img/handbook/Chapter9.jpg", 
+        "text": "结束语"
         }
 ]

@@ -8,6 +8,7 @@ import service from './service';
 import styles from './style.less';
 import List from '../../common/list-view';
 import Table from '../../common/table';
+import Navigator from '../../../utils/navigator'
 
 class Generator extends Component {
     constructor(props, context) {
@@ -149,6 +150,7 @@ class Generator extends Component {
 
     renderMainText(textList) {
         if (!textList || textList.length <= 0) return null
+        
         return textList.map(item => {
             if (typeof(item) == 'string') {
                 return this.renderText(item)
@@ -158,6 +160,8 @@ class Generator extends Component {
                 return this.renderTable(item)
             } else if(item.type === 'case') {
                 return this.renderCase(item)
+            } else if(item.type === 'tag') {
+                return this.renderTag(item)
             } else if(item.type === 'image') {
                 return this.renderImage(item)
             }
@@ -168,6 +172,16 @@ class Generator extends Component {
         if(!text) return null
         return (
             <p className={styles.text} key={text}>{text}</p>
+        )
+    }
+    renderTag(item) {
+        if(!item) return null
+        const { text } = item
+        const content = this.renderText(text)
+        return (
+            <div className={styles.tag}>
+                {content}
+            </div>
         )
     }
     renderList(item) {
@@ -181,7 +195,7 @@ class Generator extends Component {
         return null
     }
     renderTable(item) {
-         const tableData = service.getTableByName(item.resource)
+        const tableData = service.getTableByName(item.resource)
         if (tableData) {
             return (
                 <Table data={tableData} className={item.className || ''}/>
@@ -191,6 +205,7 @@ class Generator extends Component {
     }
 
     renderImage(item) {
+        if (!item) return 
         return (
             <div className={styles.image}>
                 <img src={item.resource} alt={item.alt} />
@@ -198,9 +213,18 @@ class Generator extends Component {
         )
     }
 
-    renderCase() {
-        console.log('case source')
-        return null
+    renderCase(item) {
+        if (!item) return 
+        const { text, id } = item
+        let onClick = () => {
+            Navigator.goTo(`/handbook/case/${id}`);
+        }
+        return (
+              <p className={styles.text} key={text} onClick={onClick}>
+                {text}
+                <span className={styles.caseAnchor}>查看案例</span>
+              </p>
+        )
     }
     
 

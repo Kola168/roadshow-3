@@ -5,7 +5,7 @@
     left: 0px;
     background-image:url(@url);
     transform: none;
-    top: 25px;
+    top: 30px;
     right: 30px;
     width: 24px;
 }
@@ -42,7 +42,7 @@
             .am-accordion-header[aria-expanded~="true"] {
                 .arrow {
                     .expand-icon("/static/img/handbook/expand.png");
-                    top: 27px;
+                    top: 33px;
                 }
             }
         }
@@ -75,6 +75,7 @@
             font-size: 32px;
             margin: 0;
             display: inline-block;
+            line-height: 1.2;
         }
     }
 
@@ -88,10 +89,22 @@
         padding-right: 35px;
         text-align:justify;
         background-color: @background-color-base;
+        display: inline-block;
     }
 
-    .table-col2-73 {
-        background-color: red;
+    .caseAnchor {
+        font-size: 30px;
+        line-height: 2.08;
+        text-align: left;
+        color: #fdc24f;
+        float: right;
+
+        &::after {
+            .left-icon('/static/img/handbook/more.png');
+            margin: 0 0 3px 30px; 
+            width: 27px;
+            height: 27px;
+        }
     }
 
     .image {
@@ -102,5 +115,72 @@
             width: 100%;
         }
     }
+
+    .tag {
+        text-align: right;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    :global {
+        .table {
+            &-col2-82 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-172 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 13%;
+                        }
+
+                        &:last-child {
+                            width: 23%;
+                        }
+                    }
+                }
+            }
+
+            &-col3-145 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 15%;
+                        }
+
+                        &:last-child {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+
+            &-col2-28 {
+                tr {
+                    th {
+                        &:first-child {
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            &-content-center {
+                tr {
+                    th,td {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    
 
 }

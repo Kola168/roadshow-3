@@ -32,12 +32,12 @@ class Table extends Component {
         if (!data) return 
         let rowKey = 1
         let body = data.map(row => {
+            let colKey = 1
             let cols = row.map(col => {
                 return (
-                    <td key={`td_${rowKey}_${col}`}>{col}</td>
+                    <td key={`td_${rowKey}_${colKey++}`}>{col}</td>
                 )
             })
-            console.log(rowKey)
             return (
                 <tr key={`row_${rowKey++}`}>
                     {cols}

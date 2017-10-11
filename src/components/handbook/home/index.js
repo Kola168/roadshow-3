@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'antd-mobile';
 import { autobind } from 'core-decorators';
+
 import ChapterArray from '../../../consts/homepage.json';
+import Navigator from '../../../utils/navigator'
 
 const data = ChapterArray;
 
 class HomePage extends Component {
 
     linkTo(e){
-        console.log(e.id)
+        Navigator.goTo('/handbook/chapter/'+(e.id-1))
     }
 
     render() {

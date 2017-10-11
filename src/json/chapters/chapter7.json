@@ -57,17 +57,20 @@
                 "产品引入大区经理服务对接",
                 {
                     "type": "table",
-                    "resource": "table_7_1"
+                    "resource": "table_7_1",
+                    "className": "table-col3-172"
                 },
                 "产品评价对接表",
                 {
                     "type": "table",
-                    "resource": "table_7_2"
+                    "resource": "table_7_2",
+                    "className": "table-col2-28"
                 },
                 "售后与综合服务对接表",
                 {
                     "type": "table",
-                    "resource": "table_7_3"
+                    "resource": "table_7_3",
+                    "className": "table-col3-145"
                 }
             ]
         }

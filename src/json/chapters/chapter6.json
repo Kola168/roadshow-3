@@ -148,28 +148,53 @@
             "children": [
                 {
                     "title": "1.客户适当性管理",
-                    "type": "case",
-                    "resource": "/local/cases"
+                    "text": [
+                        {
+                            "type": "case",
+                            "text": "案例一：国信证券营业部投资者适当性管理存在严重不足",
+                            "id": 1
+                        }
+                    ]
                 },
                 {
                     "title": "2.宣传推介",
-                    "type": "case",
-                    "resource": "/local/cases"
+                    "text": [
+                        {
+                            "type": "case",
+                            "text": "案例二：中国工商银行下关支行未履行适当推介和风险提示义务",
+                            "id": 2
+                        }
+                    ]
                 },
                 {
                     "title": "3.擅自代销金融产品",
-                    "type": "case",
-                    "resource": "/local/cases"
+                    "text": [
+                        {
+                            "type": "case",
+                            "text": "案例三：中投证券营业部未履行投资者适当性管理义务、未执行公司内控制度",
+                            "id": 3
+                        }
+                    ]
                 },
                 {
                     "title": "4.售后回访",
-                    "type": "case",
-                    "resource": "/local/cases"
+                    "text": [
+                        {
+                            "type": "case",
+                            "text": "案例四：方正证券广州兴盛路证券营业部短信用语不当等",
+                            "id": 4
+                        }
+                    ]
                 },
                 {
                     "title": "5.违规销售奖励",
-                    "type": "case",
-                    "resource": "/local/cases"
+                    "text": [
+                        {
+                            "type": "case",
+                            "text": "案例五：江苏兴佳利业股权投资基金管理有限公司违规宣传销售基金",
+                            "id": 5
+                        }
+                    ]
                 }
             ]
         }
