@@ -22,7 +22,7 @@ const routes = ({ history }) => (// eslint-disable-line
   <Router history={history}>
     {/*<Route path="/" component={Main}>*/}
     <Route path="financial">
-      <IndexRedirect to="/handbook" />
+      <IndexRedirect to="handbook" />
       <Route path="handbook">
         <IndexRoute component={HandbookHome} />
         <Route path="chapter/:id" component={Chapter} />
